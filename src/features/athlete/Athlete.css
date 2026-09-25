@@ -1,0 +1,732 @@
+/* ════════════════════════════════════════════════════════════════════════
+   PLAYMENTOR ATHLETE PROFILE PAGE STYLES
+   ════════════════════════════════════════════════════════════════════════ */
+
+.pm-profile-page {
+  min-height: 100vh;
+  background-color: #070b14;
+  color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.pm-profile-layout {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  gap: 28px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   1. LEFT SIDEBAR NAVIGATION
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-profile-sidebar {
+  width: 190px;
+  flex-shrink: 0;
+}
+
+.pm-profile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: sticky;
+  top: 90px;
+}
+
+.pm-profile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s ease;
+}
+
+.pm-profile-nav-item:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pm-profile-nav-item--active {
+  background: #0056e0;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 86, 224, 0.45);
+}
+
+.pm-profile-nav-item--active:hover {
+  background: #0060f0;
+}
+
+.pm-profile-nav-icon {
+  flex-shrink: 0;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   2. MAIN CONTENT AREA
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-profile-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pm-profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   3. TOP HERO BANNER CARD
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-profile-hero-card {
+  background: #0b1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  min-height: 230px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+/* Left part: Avatar & Details */
+.pm-profile-hero-left {
+  flex: 1.15;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.pm-profile-avatar-wrapper {
+  position: relative;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 24px rgba(0, 102, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.pm-profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.pm-profile-camera-btn {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #111a2e;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.pm-profile-camera-btn:hover {
+  background: #0066ff;
+  border-color: #38bdf8;
+  transform: scale(1.08);
+}
+
+.pm-profile-hero-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.pm-profile-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.pm-profile-meta-tags {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.pm-meta-pill {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.pm-profile-submeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.pm-dot-separator {
+  color: #475569;
+}
+
+.pm-profile-bio {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #94a3b8;
+  max-width: 440px;
+}
+
+/* Right part: Action banner */
+.pm-profile-hero-right {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.pm-profile-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.85);
+}
+
+.pm-profile-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #0b1220 0%, rgba(11, 18, 32, 0.2) 40%, rgba(11, 18, 32, 0.4) 100%);
+}
+
+.pm-profile-edit-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  padding: 7px 18px;
+  border-radius: 9999px;
+  background: #0066ff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.5);
+  transition: all 0.15s ease;
+  z-index: 5;
+}
+
+.pm-profile-edit-btn:hover {
+  background: #1a75ff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.7);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   4. MIDDLE & BOTTOM GRID ROWS
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-profile-row--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Generic PM Card */
+.pm-card {
+  background: #0b1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.pm-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.pm-card__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pm-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.pm-card__header-icon--blue {
+  color: #38bdf8;
+}
+
+.pm-card__header-icon--pink {
+  color: #f43f5e;
+}
+
+.pm-card__edit-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.pm-card__edit-btn:hover {
+  color: #38bdf8;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pm-card__edit-action {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.pm-card__edit-action:hover {
+  color: #38bdf8;
+}
+
+/* Basic Info List */
+.pm-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pm-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.pm-info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pm-info-key {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.pm-info-icon {
+  color: #64748b;
+}
+
+.pm-info-val {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Stats 3-Column Grid */
+.pm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.pm-stat-box {
+  background: #080d18;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.2s ease;
+}
+
+.pm-stat-box:hover {
+  border-color: rgba(56, 189, 248, 0.25);
+  background: #0a1120;
+}
+
+.pm-stat-box__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.pm-stat-box__icon--blue {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+}
+
+.pm-stat-box__icon--green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+}
+
+.pm-stat-box__icon--purple {
+  background: rgba(168, 85, 247, 0.12);
+  color: #a855f7;
+}
+
+.pm-stat-box__label {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.pm-stat-box__value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+/* Goals List */
+.pm-goals-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pm-goal-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.pm-goal-bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0084ff;
+  box-shadow: 0 0 8px rgba(0, 132, 255, 0.8);
+  flex-shrink: 0;
+}
+
+/* Interests Chips */
+.pm-interests-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pm-interest-chip {
+  background: #080d18;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 7px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.15s ease;
+}
+
+.pm-interest-chip:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: #0d1526;
+  color: #ffffff;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   5. OTHER TAB PANES (Achievements, Videos, AI Analysis)
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.pm-achievement-card {
+  display: flex;
+  gap: 14px;
+  background: #080d18;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.pm-achievement-icon {
+  color: #f59e0b;
+  flex-shrink: 0;
+}
+
+.pm-achievement-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.pm-achievement-desc {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.pm-achievement-date {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.pm-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.pm-video-card {
+  background: #080d18;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.pm-video-card__thumbnail {
+  aspect-ratio: 16 / 9;
+  background: #111a2e;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.pm-video-card__play {
+  color: #38bdf8;
+  opacity: 0.85;
+}
+
+.pm-video-card__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.pm-video-card__meta {
+  font-size: 0.74rem;
+  color: #64748b;
+}
+
+.pm-radar-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* Toast Message */
+.pm-profile-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #059669;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   6. EDIT PROFILE MODAL
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pm-modal {
+  width: 100%;
+  max-width: 600px;
+  background: #0e1526;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  animation: scaleUp 0.2s ease;
+}
+
+.pm-modal__header {
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pm-modal__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pm-modal__close-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.pm-modal__close-btn:hover {
+  color: #ffffff;
+}
+
+.pm-modal__body {
+  padding: 24px;
+}
+
+.pm-modal__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.pm-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pm-form-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pm-form-input {
+  background: #080d18;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: #ffffff;
+  font-size: 0.86rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.pm-form-input:focus {
+  border-color: #0066ff;
+  box-shadow: 0 0 10px rgba(0, 102, 255, 0.25);
+}
+
+.pm-form-textarea {
+  resize: vertical;
+}
+
+.pm-modal__footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   7. RESPONSIVE MEDIA QUERIES
+   ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .pm-profile-layout {
+    flex-direction: column;
+  }
+
+  .pm-profile-sidebar {
+    width: 100%;
+  }
+
+  .pm-profile-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    position: static;
+    padding-bottom: 6px;
+  }
+
+  .pm-profile-nav-item {
+    white-space: nowrap;
+  }
+
+  .pm-profile-hero-card {
+    flex-direction: column;
+  }
+
+  .pm-profile-hero-right {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pm-profile-row--2col {
+    grid-template-columns: 1fr;
+  }
+
+  .pm-profile-hero-left {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pm-profile-meta-tags,
+  .pm-profile-submeta {
+    justify-content: center;
+  }
+
+  .pm-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

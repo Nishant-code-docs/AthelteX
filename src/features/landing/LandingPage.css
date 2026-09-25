@@ -1,0 +1,998 @@
+/* ════════════════════════════════════════════════════════════════════════
+   PLAYMENTOR HOMEPAGE STYLES
+   ════════════════════════════════════════════════════════════════════════ */
+
+.pm-page {
+  min-height: 100vh;
+  background-color: #070b14;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   1. HERO SECTION
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-hero {
+  position: relative;
+  min-height: 580px;
+  padding-top: 84px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.pm-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ambient Stadium Lighting Glows */
+.pm-hero__light {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+}
+
+.pm-hero__light--top {
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, #0066ff 0%, transparent 70%);
+  top: -100px;
+  left: 40%;
+}
+
+.pm-hero__light--left {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #0284c7 0%, transparent 70%);
+  top: 15%;
+  left: -100px;
+  opacity: 0.25;
+}
+
+.pm-hero__light--right {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  top: 10%;
+  right: -80px;
+  opacity: 0.2;
+}
+
+.pm-hero__stadium-mesh {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.4;
+}
+
+/* Hero Center-Right Athlete Visual */
+.pm-hero__visual {
+  position: absolute;
+  right: 28%;
+  bottom: 0;
+  top: 0;
+  width: 520px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pm-hero__player-img {
+  width: 100%;
+  height: 98%;
+  object-fit: cover;
+  object-position: center top;
+  filter: contrast(1.1) brightness(0.9);
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%),
+              linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 45%, black 50%, transparent 95%);
+}
+
+.pm-hero__player-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 11, 20, 0.1) 0%,
+    rgba(7, 11, 20, 0.4) 60%,
+    #070b14 100%
+  );
+}
+
+.pm-hero__visual-spotlight {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  right: 20%;
+  height: 70%;
+  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.35) 0%, transparent 70%);
+  filter: blur(50px);
+}
+
+/* Cursive Handwriting: Train Compete Grow */
+.pm-hero__handwriting {
+  position: absolute;
+  top: 24%;
+  left: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 5;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+.pm-hero__script-word {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 0.95;
+  color: #ffffff;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.8), 0 2px 8px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.02em;
+}
+
+.pm-hero__script-word:nth-child(2) {
+  padding-left: 20px;
+  color: #e0f2fe;
+}
+
+.pm-hero__script-word:nth-child(3) {
+  padding-left: 45px;
+  color: #ffffff;
+}
+
+/* Foreground Container */
+.pm-hero__container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Left Column */
+.pm-hero__left {
+  max-width: 580px;
+}
+
+/* AI Badge */
+.pm-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(30, 58, 138, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.pm-hero__badge-icon {
+  color: #38bdf8;
+}
+
+/* Headline */
+.pm-hero__title {
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.pm-hero__highlight--blue {
+  color: #0084ff;
+  text-shadow: 0 0 24px rgba(0, 132, 255, 0.45);
+}
+
+.pm-hero__highlight--purple {
+  color: #c026d3;
+  text-shadow: 0 0 24px rgba(192, 38, 211, 0.45);
+}
+
+/* Subtitle */
+.pm-hero__subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+/* CTAs */
+.pm-hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.pm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+}
+
+.pm-btn--primary {
+  background: #ffffff;
+  color: #0b1120;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2);
+}
+
+.pm-btn--primary:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.35);
+}
+
+.pm-btn--outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.pm-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.pm-btn__play-icon {
+  fill: #ffffff;
+}
+
+/* Stats Row */
+.pm-hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pm-hero__stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.pm-hero__stat-num {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.pm-hero__stat-lbl {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* Right Column: Floating Glass Menu */
+.pm-hero__right {
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.pm-glass-card {
+  width: 330px;
+  background: rgba(13, 20, 36, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.pm-glass-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.pm-glass-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateX(4px);
+}
+
+.pm-glass-row__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pm-glass-row__icon--blue {
+  background: #0066ff;
+  color: #ffffff;
+}
+
+.pm-glass-row__icon--purple {
+  background: linear-gradient(135deg, #7c3aed, #c026d3);
+  color: #ffffff;
+}
+
+.pm-glass-row__icon--green {
+  background: #059669;
+  color: #ffffff;
+}
+
+.pm-glass-row__icon--amber {
+  background: #d97706;
+  color: #ffffff;
+}
+
+.pm-glass-row__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.pm-glass-row__title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.pm-glass-row__desc {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pm-glass-row__arrow {
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.pm-glass-row:hover .pm-glass-row__arrow {
+  color: #38bdf8;
+  transform: translateX(3px);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   2. SPORTS HORIZONTAL SLIDER
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-sports-section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px 32px 24px;
+}
+
+.pm-sports-scroll {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.pm-sports-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.pm-sport-card {
+  position: relative;
+  flex: 0 0 138px;
+  height: 84px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0f172a;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pm-sport-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pm-sport-card--active {
+  border: 2px solid #0066ff;
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.5), inset 0 0 10px rgba(0, 102, 255, 0.3);
+}
+
+.pm-sport-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.pm-sport-card:hover .pm-sport-card__img {
+  transform: scale(1.08);
+}
+
+.pm-sport-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 11, 20, 0.7) 0%, transparent 60%);
+}
+
+.pm-sport-card__active-action {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #0066ff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.8);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   3. DISCOVERY SECTION (COACHES + ACADEMIES)
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-discovery {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px 32px 30px;
+}
+
+.pm-discovery__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 28px;
+}
+
+.pm-col__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.pm-col__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pm-col__star-icon {
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5));
+}
+
+.pm-col__heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.pm-col__view-all {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0084ff;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.pm-col__view-all:hover {
+  color: #38bdf8;
+}
+
+/* Coaches List Grid */
+.pm-coaches-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.pm-coach-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.pm-coach-card:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(56, 189, 248, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.pm-coach-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: #1e293b;
+}
+
+.pm-coach-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm-coach-card__verified {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.pm-coach-card__name {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pm-coach-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+}
+
+.pm-coach-card__score {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pm-coach-card__reviews {
+  color: #64748b;
+  font-size: 0.68rem;
+}
+
+.pm-coach-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+  min-height: 38px;
+}
+
+.pm-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.65rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.pm-coach-card__location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.pm-coach-card__btn {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  padding: 6px 8px;
+  background: #0066ff;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.pm-coach-card__btn:hover {
+  background: #1d72fe;
+}
+
+/* Academies List Grid */
+.pm-academies-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.pm-academy-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.pm-academy-card:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(56, 189, 248, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.pm-academy-card__img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: #1e293b;
+}
+
+.pm-academy-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm-academy-card__name {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pm-academy-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  margin-bottom: 6px;
+}
+
+.pm-academy-card__score {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pm-academy-card__reviews {
+  color: #64748b;
+  font-size: 0.68rem;
+}
+
+.pm-academy-card__location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.pm-academy-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+  min-height: 24px;
+}
+
+.pm-academy-card__btn {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  padding: 6px 8px;
+  background: #0066ff;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.pm-academy-card__btn:hover {
+  background: #1d72fe;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   4. BOTTOM AI ANALYSIS & CTA BANNER
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-ai-banner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px 32px 50px;
+}
+
+.pm-ai-banner__wrapper {
+  background: linear-gradient(135deg, rgba(32, 14, 60, 0.7) 0%, rgba(13, 20, 42, 0.85) 100%);
+  border: 1px solid rgba(192, 38, 211, 0.3);
+  border-radius: 20px;
+  padding: 24px 32px;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 36px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.pm-ai-banner__wrapper::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(192, 38, 211, 0.25) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+/* Banner Header */
+.pm-ai-banner__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.pm-ai-banner__icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(217, 70, 239, 0.15);
+  border: 1px solid rgba(217, 70, 239, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.3);
+}
+
+.pm-ai-banner__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.pm-ai-banner__subtitle {
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+/* 4 Feature Badges */
+.pm-ai-banner__features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.pm-ai-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 14px;
+  transition: all 0.2s ease;
+}
+
+.pm-ai-pill:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(217, 70, 239, 0.3);
+}
+
+.pm-ai-pill__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pm-ai-pill__icon--purple {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+}
+
+.pm-ai-pill__icon--fuchsia {
+  background: rgba(217, 70, 239, 0.15);
+  color: #e879f9;
+}
+
+.pm-ai-pill__icon--blue {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+.pm-ai-pill__icon--violet {
+  background: rgba(129, 140, 248, 0.15);
+  color: #818cf8;
+}
+
+.pm-ai-pill__title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1px;
+}
+
+.pm-ai-pill__desc {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+/* Right CTA Block */
+.pm-ai-banner__right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pm-ai-banner__cta-box {
+  max-width: 360px;
+  text-align: left;
+}
+
+.pm-ai-banner__cta-tag {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.pm-ai-banner__cta-headline {
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.pm-btn--glow {
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.5);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   5. RESPONSIVE BREAKPOINTS
+   ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .pm-hero__visual {
+    right: 15%;
+    width: 440px;
+    opacity: 0.75;
+  }
+
+  .pm-coaches-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pm-academies-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pm-discovery__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 960px) {
+  .pm-hero {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .pm-hero__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pm-hero__visual {
+    display: none;
+  }
+
+  .pm-hero__right {
+    width: 100%;
+  }
+
+  .pm-glass-card {
+    width: 100%;
+  }
+
+  .pm-ai-banner__wrapper {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .pm-ai-banner__right {
+    justify-content: flex-start;
+  }
+
+  .pm-ai-banner__features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pm-coaches-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pm-hero__stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .pm-hero__title {
+    font-size: 2.1rem;
+  }
+}

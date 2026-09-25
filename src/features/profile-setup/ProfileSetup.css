@@ -1,0 +1,159 @@
+.setup-page {
+  min-height: 100vh;
+  padding: calc(var(--navbar-height) + var(--space-2xl)) 0 var(--space-4xl);
+  background: var(--bg-deep);
+}
+
+.setup-page__container {
+  max-width: 800px;
+}
+
+.setup-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.setup-header h1 {
+  margin: var(--space-md) 0 var(--space-sm);
+  font-size: var(--text-3xl);
+}
+
+.setup-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.setup-step-indicator {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--text-muted);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.setup-step-indicator.active {
+  color: var(--color-primary-light);
+  border-color: var(--color-primary);
+  background: hsla(250, 84%, 54%, 0.15);
+}
+
+.setup-step-line {
+  width: 24px;
+  height: 2px;
+  background: var(--border-subtle);
+}
+
+.setup-card {
+  padding: var(--space-2xl);
+}
+
+.setup-step-content h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xs);
+}
+
+/* Sports grid */
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.sport-select-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sport-select-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.sport-select-card.selected {
+  background: hsla(250, 84%, 54%, 0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 16px var(--color-primary-glow);
+}
+
+.sport-icon {
+  font-size: 2rem;
+}
+
+.sport-name {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+/* Skills slider */
+.skills-sliders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.skill-slider-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.skill-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.skill-val-pill {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: hsla(250, 84%, 54%, 0.2);
+  color: var(--color-primary-light);
+}
+
+.skill-range-input {
+  width: 100%;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.skill-range-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.setup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 768px) {
+  .sports-grid { grid-template-columns: repeat(2, 1fr); }
+  .skills-sliders-grid { grid-template-columns: 1fr; }
+  .setup-progress { flex-wrap: wrap; }
+}

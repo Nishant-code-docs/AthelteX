@@ -1,0 +1,694 @@
+/* ════════════════════════════════════════════════════════════════════════
+   PLAYMENTOR AI ANALYSIS VIEW STYLES
+   ════════════════════════════════════════════════════════════════════════ */
+
+.pm-ai-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   1. HEADER & CONTROLS
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-ai-hdr {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pm-ai-hdr__left {
+  max-width: 580px;
+}
+
+.pm-ai-hdr__title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.pm-ai-hdr__subtitle {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #94a3b8;
+}
+
+.pm-ai-hdr__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pm-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.pm-select-lbl {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.pm-select-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0b1220;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.pm-select-btn:hover {
+  background: #0f172a;
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.pm-select-btn--sm {
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+}
+
+.pm-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 140px;
+  background: #0e1628;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.pm-dropdown-menu--right {
+  left: auto;
+  right: 0;
+}
+
+.pm-dropdown-item {
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pm-dropdown-item:hover {
+  color: #ffffff;
+  background: rgba(56, 189, 248, 0.15);
+}
+
+.pm-btn-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0066ff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.45);
+  transition: all 0.15s ease;
+}
+
+.pm-btn-export:hover {
+  background: #1a75ff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.6);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   2. GENERIC AI CARD & GRID ROWS
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-ai-card {
+  background: #0b1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.pm-ai-card__title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.pm-ai-card__title--green {
+  color: #10b981;
+}
+
+.pm-ai-card__title--red {
+  color: #f87171;
+}
+
+.pm-ai-card__title--purple {
+  color: #c084fc;
+}
+
+/* Row 1: 4 Columns */
+.pm-ai-row--4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Card 1: Overall Score */
+.pm-score-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.pm-score-ring {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+}
+
+.pm-score-ring svg {
+  transform: rotate(-90deg);
+}
+
+.pm-score-ring__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pm-score-num {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.pm-score-max {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.pm-score-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pm-score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 3px 8px;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.pm-score-sub {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* Card 2 & 3: Strengths and Areas to Improve */
+.pm-ai-card--strengths {
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.pm-ai-card--improve {
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.pm-ai-card--rec {
+  border-color: rgba(168, 85, 247, 0.25);
+  background: linear-gradient(135deg, #0b1220 0%, rgba(26, 16, 50, 0.6) 100%);
+}
+
+.pm-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pm-item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pm-item-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pm-item-icon--green {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.pm-item-icon--red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.pm-item-text {
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* Card 4: AI Recommendation */
+.pm-ai-rec-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pm-ai-rec-sparkle {
+  color: #c084fc;
+}
+
+.pm-ai-rec-text {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.pm-ai-rec-action {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pm-ai-rec-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pm-ai-rec-btn:hover {
+  background: rgba(168, 85, 247, 0.25);
+  color: #ffffff;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   3. ROW 2: PERFORMANCE METRICS & SKILL BREAKDOWN
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-ai-row--metrics {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+}
+
+/* Chart Header */
+.pm-ai-chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.pm-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.pm-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.pm-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pm-chart-container {
+  width: 100%;
+  height: 145px;
+  margin-top: 10px;
+}
+
+.pm-line-chart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Skill Breakdown Radar */
+.pm-radar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.pm-radar-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pm-radar-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.pm-radar-dot--blue {
+  background: #0084ff;
+  box-shadow: 0 0 6px #0084ff;
+}
+
+.pm-radar-dot--muted {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.pm-radar-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+}
+
+.pm-radar-svg {
+  overflow: visible;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   4. ROW 3: MATCH ANALYSIS & VIDEO INSIGHTS
+   ────────────────────────────────────────────────────────────────────────── */
+.pm-ai-row--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pm-card-row-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.pm-arrow-link {
+  background: transparent;
+  border: none;
+  color: #0084ff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: transform 0.15s ease;
+}
+
+.pm-arrow-link:hover {
+  transform: translateX(3px);
+  color: #38bdf8;
+}
+
+.pm-view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0084ff;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.pm-view-all-link:hover {
+  color: #38bdf8;
+}
+
+/* Match Items */
+.pm-matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pm-match-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #080d18;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 8px 12px;
+  transition: all 0.15s ease;
+}
+
+.pm-match-item:hover {
+  background: #0d1526;
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.pm-match-thumb-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pm-match-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm-match-play-icon {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pm-match-info {
+  flex: 1.2;
+  min-width: 0;
+}
+
+.pm-match-opponent {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.pm-match-date {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.pm-match-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+}
+
+.pm-match-stat-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pm-match-stat-lbl {
+  font-size: 0.65rem;
+  color: #64748b;
+}
+
+.pm-match-chevron {
+  color: rgba(255, 255, 255, 0.3);
+  margin-left: 4px;
+}
+
+/* Video Insights Items */
+.pm-video-insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pm-video-insight-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #080d18;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 8px 12px;
+  transition: all 0.15s ease;
+}
+
+.pm-video-insight-item:hover {
+  background: #0d1526;
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.pm-vid-thumb-wrap {
+  position: relative;
+  width: 58px;
+  height: 42px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pm-vid-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm-vid-play-btn {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pm-vid-duration {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  color: #ffffff;
+}
+
+.pm-vid-details {
+  flex: 1.4;
+  min-width: 0;
+}
+
+.pm-vid-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.pm-vid-desc {
+  font-size: 0.7rem;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pm-vid-badge-wrap {
+  flex-shrink: 0;
+}
+
+.pm-vid-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   5. RESPONSIVE QUERIES
+   ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .pm-ai-row--4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pm-ai-row--metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .pm-ai-row--2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .pm-ai-row--4col {
+    grid-template-columns: 1fr;
+  }
+
+  .pm-ai-hdr__controls {
+    width: 100%;
+  }
+
+  .pm-select-wrap {
+    flex: 1;
+  }
+
+  .pm-btn-export {
+    width: 100%;
+    justify-content: center;
+  }
+}
