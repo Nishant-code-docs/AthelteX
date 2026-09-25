@@ -60,7 +60,7 @@ export default function Navbar() {
               </defs>
             </svg>
           </div>
-          <span className="navbar__brand">PlayMentor</span>
+          <span className="navbar__brand">AthleteX</span>
         </Link>
 
         {/* Center Nav Links */}

@@ -3,7 +3,7 @@ export const mockAthletes = [
     id: 'sayantan-patra',
     role: 'Athlete',
     name: 'Sayantan Patra',
-    email: 'sayantan@playmentor.com',
+    email: 'sayantan@athletex.com',
     avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop',
     banner: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1200&auto=format&fit=crop',
     sport: 'Football',

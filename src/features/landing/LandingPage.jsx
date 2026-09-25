@@ -507,7 +507,7 @@ export default function LandingPage() {
             <div className="pm-ai-banner__cta-box">
               <p className="pm-ai-banner__cta-tag">Ready to take your game to the next level?</p>
               <h4 className="pm-ai-banner__cta-headline">
-                Join thousands of athletes, coaches, and academies on PlayMentor.
+                Join thousands of athletes, coaches, and academies on AthleteX.
               </h4>
               <Link to="/auth" className="pm-btn pm-btn--primary pm-btn--glow">
                 Get Started <ArrowRight size={16} />

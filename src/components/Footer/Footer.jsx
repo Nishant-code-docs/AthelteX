@@ -28,7 +28,7 @@ export default function Footer() {
                   </defs>
                 </svg>
               </div>
-              <span className="footer__logo-text">PlayMentor</span>
+              <span className="footer__logo-text">AthleteX</span>
             </Link>
             <p className="footer__tagline">
               Democratizing sports talent assessment. Connecting athletes with verified coaches and academies worldwide.
@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>© {new Date().getFullYear()} PlayMentor. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AthleteX. All rights reserved.</p>
           <p className="footer__built">Built with ⚡ for athletes, coaches, and sports champions</p>
         </div>
       </div>
