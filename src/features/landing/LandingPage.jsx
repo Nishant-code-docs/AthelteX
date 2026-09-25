@@ -24,7 +24,7 @@ const SPORTS_CARDS = [
   {
     id: 'football',
     name: 'Football',
-    image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=400&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1614632537423-1e6c2e7e0aab?q=80&w=400&auto=format&fit=crop',
     alt: 'Football soccer ball on stadium grass',
   },
   {

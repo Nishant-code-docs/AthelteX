@@ -117,7 +117,7 @@ export default function AIAnalysisView() {
       ratingColor: '#10b981',
       goals: 1,
       assists: 1,
-      thumb: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=200&auto=format&fit=crop',
+      thumb: 'https://images.unsplash.com/photo-1614632537423-1e6c2e7e0aab?q=80&w=200&auto=format&fit=crop',
     },
   ];
 
